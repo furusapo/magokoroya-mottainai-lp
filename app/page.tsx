@@ -1,170 +1,170 @@
+const ADDRESS = "〒339-0021 埼玉県さいたま市岩槻区末田2587";
 const MAP_URL =
-  "https://www.google.com/maps/search/?api=1&query=%E3%81%A8%E3%81%86%E3%81%B5%E5%B7%A5%E6%88%BF%E3%81%BE%E3%81%94%E3%81%93%E3%82%8D%E5%B1%8B+%E5%9F%BC%E7%8E%89%E7%9C%8C%E3%81%95%E3%81%84%E3%81%9F%E3%81%BE%E5%B8%82%E5%B2%A9%E6%A7%BB%E5%8C%BA%E6%9C%AB%E7%94%B02587";
-
-const days = [
-  { day: "月", label: "Monday" },
-  { day: "水", label: "Wednesday" },
-  { day: "土", label: "Saturday" },
-];
+  "https://www.google.com/maps/dir/?api=1&destination=%E5%9F%BC%E7%8E%89%E7%9C%8C%E3%81%95%E3%81%84%E3%81%9F%E3%81%BE%E5%B8%82%E5%B2%A9%E6%A7%BB%E5%8C%BA%E6%9C%AB%E7%94%B02587";
+const MAP_EMBED =
+  "https://www.google.com/maps?q=%E5%9F%BC%E7%8E%89%E7%9C%8C%E3%81%95%E3%81%84%E3%81%9F%E3%81%BE%E5%B8%82%E5%B2%A9%E6%A7%BB%E5%8C%BA%E6%9C%AB%E7%94%B02587&output=embed";
 
 export default function Home() {
   return (
-    <main>
+    <main id="top">
       <header className="site-header">
-        <a className="brand" href="#top" aria-label="ページの先頭へ">
-          <span className="brand-mark">ま</span>
-          <span>
-            <small>明治9年創業</small>
-            とうふ工房 まごころ屋
-          </span>
+        <a href="#top" className="logo-link" aria-label="ページの先頭へ">
+          <img
+            src="/images/suga-foods-logo.png"
+            alt="有限会社 須賀食品"
+            width="325"
+            height="80"
+          />
+        </a>
+        <a className="header-map" href={MAP_URL} target="_blank" rel="noreferrer">
+          <span aria-hidden="true">⌖</span> アクセス
         </a>
       </header>
 
-      <section className="hero" id="top">
-        <div className="soy-pattern" aria-hidden="true" />
-        <div className="hero-copy">
-          <p className="eyebrow">工場直売のおたのしみ</p>
-          <h1>
-            おいしく、
-            <br />
-            もったいなく。
-          </h1>
-          <p className="hero-lead">
-            まだまだおいしく食べられる商品を、
-            <br />
-            うれしい価格でお届けします。
-          </p>
-
-          <div className="event-card">
-            <span className="event-ribbon">毎週開催</span>
-            <div className="day-row" aria-label="月曜日、水曜日、土曜日">
-              {days.map((item) => (
-                <div className="day-badge" key={item.day}>
-                  <span>{item.day}</span>
-                  <small>{item.label}</small>
-                </div>
-              ))}
-            </div>
-            <p className="start-time">
-              <strong>16:00</strong>
-              <span>スタート</span>
-            </p>
-            <p className="sellout">※商品がなくなり次第終了です</p>
-          </div>
-
-          <a className="primary-button" href={MAP_URL} target="_blank" rel="noreferrer">
-            <span className="pin" aria-hidden="true">●</span>
-            Googleマップで場所を見る
-            <span aria-hidden="true">›</span>
-          </a>
-          <p className="parking-note">駐車場あり・お車でどうぞ</p>
+      <section className="campaign section campaign-top" aria-labelledby="campaign-title">
+        <div className="section-heading">
+          <p>THIS WEEK&apos;S INFORMATION</p>
+          <h1 id="campaign-title">開催のお知らせ</h1>
         </div>
-
-        <div className="hero-visual" aria-label="まごころ屋の豆腐と豆乳どーなつ">
-          <div className="sun" aria-hidden="true" />
-          <figure className="food-photo main-food">
-            <img
-              src="/images/food-hero.png"
-              alt="なめらかな寄せ豆腐"
-            />
-          </figure>
-          <figure className="food-photo sub-food">
-            <img
-              src="/images/food-hero.png"
-              alt="豆乳どーなつ"
-            />
-          </figure>
-          <div className="hand-note">できたての工場から</div>
-        </div>
+        <figure className="campaign-visual">
+          <img
+            src="/images/mottainai-sale.png"
+            alt="とうふ工房まごころ屋 もったいないセール。本日16時スタート、30〜50%OFF、数量限定、なくなり次第終了"
+            width="1286"
+            height="1278"
+          />
+        </figure>
+        <p className="fine-print">
+          ※対象商品・販売数は日によって異なります。売り切れの際はご了承ください。
+        </p>
       </section>
 
-      <section className="about section">
-        <p className="section-kicker">MOTTAINAI MARKET</p>
-        <h2>
-          夕方4時、
-          <br />
-          まごころ屋に集合。
-        </h2>
-        <p className="body-copy">
-          形がふぞろいだったり、賞味期限が近かったり。
-          品質には問題のない「まだおいしい」商品を、お得に販売する小さな市です。
+      <section className="intro section" aria-labelledby="intro-title">
+        <div className="section-heading">
+          <p>ABOUT THE MARKET</p>
+          <h2 id="intro-title">おいしさはそのまま。<br />うれしい価格で。</h2>
+        </div>
+        <p className="lead">
+          とうふ工房まごころ屋が、まだおいしく食べられる商品を特別価格で販売する「もったいない市」です。
         </p>
-        <div className="point-grid">
+
+        <div className="feature-list">
           <article>
             <span>01</span>
-            <b>何があるかは<br />その日のお楽しみ</b>
+            <div>
+              <h3>毎週 月・木・土曜日</h3>
+              <p>週3日、夕方16:00から開催します。</p>
+            </div>
           </article>
           <article>
             <span>02</span>
-            <b>お財布にも<br />地球にもうれしい</b>
+            <div>
+              <h3>30〜50%OFF</h3>
+              <p>対象商品を、うれしい特別価格で。</p>
+            </div>
           </article>
           <article>
             <span>03</span>
-            <b>工場直売の<br />おいしさ</b>
+            <div>
+              <h3>数量限定</h3>
+              <p>商品がなくなり次第、その日の販売は終了です。</p>
+            </div>
           </article>
         </div>
-        <p className="notice">
-          ※販売商品・価格・数量は日によって異なります。お取り置きはできません。
-        </p>
       </section>
 
-      <section className="story section">
-        <div className="story-card">
-          <p className="section-kicker">SINCE 1876</p>
-          <h2>岩槻で、明治9年から。</h2>
+      <section className="access section" id="access" aria-labelledby="access-title">
+        <div className="section-heading">
+          <p>ACCESS</p>
+          <h2 id="access-title">場所はこちら</h2>
+        </div>
+        <figure className="store-photo">
+          <img
+            src="/images/magokoroya-store.png"
+            alt="とうふ工房まごころ屋の店舗外観"
+            width="672"
+            height="814"
+          />
+        </figure>
+        <div className="shop-card">
+          <p className="card-label">SHOP INFORMATION</p>
+          <img
+            src="/images/suga-foods-logo.png"
+            alt="有限会社 須賀食品"
+            width="325"
+            height="80"
+          />
+          <p className="shop-name">とうふ工房 まごころ屋</p>
+          <address>{ADDRESS}</address>
+          <dl>
+            <div>
+              <dt>もったいない市</dt>
+              <dd>毎週 月・木・土 16:00〜</dd>
+            </div>
+            <div>
+              <dt>終了時間</dt>
+              <dd>商品がなくなり次第終了</dd>
+            </div>
+            <div>
+              <dt>駐車場</dt>
+              <dd>あり</dd>
+            </div>
+          </dl>
+          <a className="button button-dark" href={MAP_URL} target="_blank" rel="noreferrer">
+            現在地から経路を見る <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <div className="map-block">
+          <p className="card-label">MAP</p>
+          <div className="map-wrap">
+            <iframe
+              src={MAP_EMBED}
+              title="とうふ工房まごころ屋周辺の地図"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="message section" aria-labelledby="message-title">
+        <p className="message-kicker">ごあいさつ</p>
+        <h2 id="message-title">これまでも、これからも。<br />まっすぐ豆腐と向き合う。</h2>
+        <div className="message-body">
           <p>
-            代々受け継がれた職人の技を大切に、
-            毎日まじめに豆腐と向き合っています。
-            地域の食卓に、できたてのおいしさを。
+            須賀食品は明治９年の創業以来、豆腐造りに取り組んで140年余りがたちます。
           </p>
-          <div className="product-strip">
-            <span>豆腐</span><i>・</i><span>油揚げ</span><i>・</i>
-            <span>お惣菜</span><i>・</i><span>豆乳どーなつ</span>
-          </div>
+          <p>
+            代々受け継がれた伝統の味を守るため、手間を惜しまず、毎日豆腐と向き合っております。
+          </p>
+          <p>
+            現在は、昔ながらの職人の技術と最新の技術の融合を図り、多様化するお客様のニーズに合った商品づくりを目指して日々精進しております。
+          </p>
+          <p>
+            令和の時代も、社会に貢献できる老舗の豆腐屋として躍進してまいります。
+          </p>
         </div>
-      </section>
-
-      <section className="access section" id="access">
-        <p className="section-kicker">ACCESS</p>
-        <h2>とうふ工房<br />まごころ屋</h2>
-        <div className="address-card">
-          <div className="map-illustration" aria-hidden="true">
-            <span className="map-road road-one" />
-            <span className="map-road road-two" />
-            <span className="map-pin"><i>ま</i></span>
-          </div>
-          <div className="address-content">
-            <p className="postal">〒339-0021</p>
-            <p className="address">埼玉県さいたま市<br />岩槻区末田2587</p>
-            <dl>
-              <div><dt>通常営業時間</dt><dd>9:00〜17:00</dd></div>
-              <div><dt>定休日</dt><dd>日曜日</dd></div>
-              <div><dt>駐車場</dt><dd>あり</dd></div>
-            </dl>
-            <a className="primary-button dark" href={MAP_URL} target="_blank" rel="noreferrer">
-              Googleマップを開く <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-        </div>
-        <a className="phone-link" href="tel:0487981766">
-          <small>お問い合わせ</small>
-          048-798-1766
-        </a>
+        <p className="signature">四代目　代表取締役　須賀大雄</p>
       </section>
 
       <footer>
-        <span className="brand-mark">ま</span>
+        <img
+          src="/images/suga-foods-logo.png"
+          alt="有限会社 須賀食品"
+          width="325"
+          height="80"
+        />
         <p>とうふ工房 まごころ屋</p>
-        <small>運営：有限会社 須賀食品</small>
+        <small>〒339-0021 埼玉県さいたま市岩槻区末田2587</small>
       </footer>
 
-      <div className="sticky-cta">
-        <div>
-          <small>毎週 月・水・土</small>
-          <strong>16:00〜 開催！</strong>
-        </div>
-        <a href={MAP_URL} target="_blank" rel="noreferrer">場所を見る</a>
-      </div>
+      <nav className="sticky-nav" aria-label="ページ下部の固定メニュー">
+        <a href="#top"><span aria-hidden="true">⌂</span><small>トップ</small></a>
+        <a href="#access"><span aria-hidden="true">⌖</span><small>店舗情報</small></a>
+        <a className="sticky-main" href={MAP_URL} target="_blank" rel="noreferrer">
+          <span aria-hidden="true">↗</span><small>経路を見る</small>
+        </a>
+      </nav>
     </main>
   );
 }
